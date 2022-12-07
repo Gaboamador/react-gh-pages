@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.b6977a3a.css",
-    "main.js": "/react-gh-pages/static/js/main.24559160.js",
+    "main.css": "/react-gh-pages/static/css/main.6778fcda.css",
+    "main.js": "/react-gh-pages/static/js/main.a5c66449.js",
     "static/js/787.28cb0dcd.chunk.js": "/react-gh-pages/static/js/787.28cb0dcd.chunk.js",
     "static/media/logo.png": "/react-gh-pages/static/media/logo.0a8018fa799b3fc9d14b.png",
     "static/media/portugal.png": "/react-gh-pages/static/media/portugal.0a29c6145ae984eb9e66.png",
@@ -10,12 +10,12 @@
     "static/media/brazil.png": "/react-gh-pages/static/media/brazil.6081e50968fda94d49cc.png",
     "static/media/morocco.png": "/react-gh-pages/static/media/morocco.ccd98f6cd28a6a82fca2.png",
     "index.html": "/react-gh-pages/index.html",
-    "main.b6977a3a.css.map": "/react-gh-pages/static/css/main.b6977a3a.css.map",
-    "main.24559160.js.map": "/react-gh-pages/static/js/main.24559160.js.map",
+    "main.6778fcda.css.map": "/react-gh-pages/static/css/main.6778fcda.css.map",
+    "main.a5c66449.js.map": "/react-gh-pages/static/js/main.a5c66449.js.map",
     "787.28cb0dcd.chunk.js.map": "/react-gh-pages/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b6977a3a.css",
-    "static/js/main.24559160.js"
+    "static/css/main.6778fcda.css",
+    "static/js/main.a5c66449.js"
   ]
 }

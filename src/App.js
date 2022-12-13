@@ -6,7 +6,6 @@ import './App.css';
 // import emailjs from '@emailjs/browser';
 import EmbeddedEmail from './embeddedEmail'
 
-//Comentario prueba
 
 function App() {
 

@@ -14,25 +14,32 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /*background-color: #e8e0e3;*/
+  min-height: 50vh;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
+  flex-basis: 100%;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(8px + 2vmin);
+  color: #8d1b3d;
 }
 
 .App-link {
   color: #61dafb;
 }
 
+
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+        transform: rotatey(0deg)
   }
   to {
-    transform: rotate(360deg);
+        transform: rotatey(360deg);
   }
 }
+
+.font-face-qt {
+  font-family: "Qatar2022Arabic";
+ }

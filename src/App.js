@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
+//import { useState } from 'react';
+//import { computeHeadingLevel } from '@testing-library/react';
+// import React, { useRef } from 'react';
+// import emailjs from '@emailjs/browser';
+import EmbeddedEmail from './embeddedEmail'
+
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          FIFA World Cup Qatar 2022 - Semifinales
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
+        <EmbeddedEmail/>
+        
       </header>
-    </div>
+
+   </div>
+   
   );
-}
+
+}; 
 
 export default App;

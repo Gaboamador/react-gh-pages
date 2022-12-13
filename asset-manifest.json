@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-gh-pages/static/css/main.63b92cd7.css",
-    "main.js": "/react-gh-pages/static/js/main.ceb621a0.js",
+    "main.js": "/react-gh-pages/static/js/main.c8a4b06f.js",
     "static/js/787.28cb0dcd.chunk.js": "/react-gh-pages/static/js/787.28cb0dcd.chunk.js",
     "static/media/Qatar2022Arabic-Bold.ttf": "/react-gh-pages/static/media/Qatar2022Arabic-Bold.6822079ad6ad4f0dbab2.ttf",
     "static/media/logo.png": "/react-gh-pages/static/media/logo.0a8018fa799b3fc9d14b.png",
@@ -10,11 +10,11 @@
     "static/media/morocco.png": "/react-gh-pages/static/media/morocco.ccd98f6cd28a6a82fca2.png",
     "index.html": "/react-gh-pages/index.html",
     "main.63b92cd7.css.map": "/react-gh-pages/static/css/main.63b92cd7.css.map",
-    "main.ceb621a0.js.map": "/react-gh-pages/static/js/main.ceb621a0.js.map",
+    "main.c8a4b06f.js.map": "/react-gh-pages/static/js/main.c8a4b06f.js.map",
     "787.28cb0dcd.chunk.js.map": "/react-gh-pages/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.63b92cd7.css",
-    "static/js/main.ceb621a0.js"
+    "static/js/main.c8a4b06f.js"
   ]
 }

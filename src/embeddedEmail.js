@@ -46,9 +46,9 @@ export default function EmbeddedEmail() {
         <tr>
             <td align='right'><img src={croatia} alt="croatia" width="32px" height="32px"/></td>
             <td align='right'><label for='L1'>Croacia</label></td>
-            <td><input id='L1' type='number' name='l1' required/></td>
+            <td><input id='L1' type='number' name='l1' required className="input"/></td>
             <td><label> - </label></td>
-            <td><input id='V1' type='number' name='v1' required/></td>
+            <td><input id='V1' type='number' name='v1' required className="input"/></td>
             <td align='left'><label for='V1'>Marruecos</label></td>
             <td align='left'><img src={morocco} alt="morocco" width="32px" height="32px"/></td>
         </tr>
@@ -62,9 +62,9 @@ export default function EmbeddedEmail() {
         <tr>
             <td align='right'><img align='center' src={argentina} alt="argentina" width="32px" height="32px"/></td>
             <td align='right'><label for='L2'>Argentina</label></td>
-            <td><input id='L2' type='number' name='l2' required/></td>
+            <td><input id='L2' type='number' name='l2' required className="input"/></td>
             <td align='center'><label> - </label></td>
-            <td><input id='V2' type='number' name='v2' required/></td>
+            <td><input id='V2' type='number' name='v2' required className="input"/></td>
             <td align='left'><label for='V2'>Francia</label></td>
             <td><img align='left' src={france} alt="france" width="32px" height="32px"/></td>
         </tr>

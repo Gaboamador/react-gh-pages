@@ -6,25 +6,23 @@ import './App.css';
 // import emailjs from '@emailjs/browser';
 import EmbeddedEmail from './embeddedEmail'
 import {Button, Container, Row, Col, Form} from 'react-bootstrap';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
 
   return (
     
-      <div className="App">
-         
+  <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p className="Titulo">
           FIFA World Cup Qatar 2022
         </p>
-        
-        <EmbeddedEmail/>
-        
+        <EmbeddedEmail/> 
     </header> 
     
-   </div>
+  </div>
    
   );
 

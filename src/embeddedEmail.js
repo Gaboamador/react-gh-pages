@@ -4,7 +4,7 @@ import argentina from './argentina.png';
 import croatia from './croatia.png';
 import france from './france.png';
 import morocco from './morocco.png';
-import tbd from './tbd.png';
+//import tbd from './tbd.png';
 
 //import Button from 'react-bootstrap/Button';
 //import Form from 'react-bootstrap/Form';
@@ -27,17 +27,18 @@ export default function EmbeddedEmail() {
         <form onSubmit={sendEmail}>
 
 <table>
-            <input type='hidden' name='contact_number'/>
+        <input type='hidden' name='contact_number'/>
         <tr>
-            <th colspan="3" align='right' vertical-align="middle"><label for='name'>Nombre:</label></th>
-            <td colspan="4" align='left' vertical-align="middle"><input id='name' type='text' name='from_name' placeholder='Insertar nombre de jugador' required/></td>
+        <th colspan="7" align='center' vertical-align="middle"><label for='name'>Nombre</label></th>
         </tr>
+        <tr>
+        <td colspan="7" align='center' vertical-align="middle"><input id='name' type='text' name='from_name' placeholder='Insertar nombre de jugador' required/></td>
+        </tr>       
+        
         <tr>
             <p> </p>
         </tr>
-        <tr>
-            <p> </p>
-        </tr>
+        
         <tr className="Subtitulo">
             <td colspan="7">TERCER PUESTO</td>
         </tr>
@@ -48,8 +49,8 @@ export default function EmbeddedEmail() {
             <td><input id='L1' type='number' name='l1' required/></td>
             <td><label> - </label></td>
             <td><input id='V1' type='number' name='v1' required/></td>
-            <td align='left'><label for='V1'>TBD</label></td>
-            <td align='left'><img src={tbd} alt="tbd" width="32px" height="32px"/></td>
+            <td align='left'><label for='V1'>Marruecos</label></td>
+            <td align='left'><img src={morocco} alt="morocco" width="32px" height="32px"/></td>
         </tr>
         
         <tr>
@@ -64,9 +65,10 @@ export default function EmbeddedEmail() {
             <td><input id='L2' type='number' name='l2' required/></td>
             <td align='center'><label> - </label></td>
             <td><input id='V2' type='number' name='v2' required/></td>
-            <td align='left'><label for='V2'>TBD</label></td>
-            <td><img align='left' src={tbd} alt="tbd" width="32px" height="32px"/></td>
+            <td align='left'><label for='V2'>Francia</label></td>
+            <td><img align='left' src={france} alt="france" width="32px" height="32px"/></td>
         </tr>
+        
         <tr>
             <p> </p>
         </tr>

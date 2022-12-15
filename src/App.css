@@ -29,7 +29,7 @@
 
 @viewport {
   width: device-width;
-  zoom:0.7%;
+  zoom:auto;
 }
 
 .App-link {

@@ -1,0 +1,325 @@
+<!-- Styles -->
+<style>
+    #chartdivPibs {
+      width: 100%;
+      height: 400px;
+    }
+    </style>
+    
+    <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    
+    <!-- Chart code -->
+    <script>
+    am5.ready(function() {
+    
+    // Data
+    var allData = {
+'1': {'Rodrigo M.': 4,'Santiago L.': 4,'Gabriel A..': 4,'Javier L.': 1,},
+'2': {'Rodrigo M.': 7,'Santiago L.': 7,'Gabriel A..': 7,'Javier L.': 4,},
+'3': {'Santiago L.': 15,'Gabriel A..': 11,'Rodrigo M.': 10,'Javier L.': 8,},
+'4': {'Gabriel A..': 19,'Santiago L.': 18,'Rodrigo M.': 11,'Javier L.': 9,},
+'5': {'Gabriel A..': 19,'Santiago L.': 18,'Rodrigo M.': 11,'Javier L.': 9,},
+'6': {'Gabriel A..': 20,'Santiago L.': 19,'Rodrigo M.': 12,'Javier L.': 10,},
+'7': {'Gabriel A..': 23,'Santiago L.': 19,'Rodrigo M.': 15,'Javier L.': 11,},
+'8': {'Gabriel A..': 26,'Santiago L.': 23,'Rodrigo M.': 18,'Javier L.': 14,},
+'9': {'Gabriel A..': 27,'Santiago L.': 24,'Rodrigo M.': 18,'Javier L.': 17,},
+'10': {'Gabriel A..': 27,'Santiago L.': 24,'Rodrigo M.': 18,'Javier L.': 17,},
+'11': {'Gabriel A..': 31,'Santiago L.': 28,'Rodrigo M.': 21,'Javier L.': 20,},
+'12': {'Gabriel A..': 34,'Santiago L.': 32,'Rodrigo M.': 25,'Javier L.': 23,},
+'13': {'Santiago L.': 36,'Gabriel A..': 35,'Javier L.': 27,'Rodrigo M.': 26,},
+'14': {'Santiago L.': 36,'Gabriel A..': 35,'Javier L.': 30,'Rodrigo M.': 26,},
+'15': {'Santiago L.': 40,'Gabriel A..': 38,'Javier L.': 33,'Rodrigo M.': 30,},
+'16': {'Santiago L.': 43,'Gabriel A..': 42,'Rodrigo M.': 38,'Javier L.': 36,},
+'17': {'Santiago L.': 43,'Gabriel A..': 42,'Rodrigo M.': 38,'Javier L.': 36,},
+'18': {'Santiago L.': 46,'Gabriel A..': 45,'Rodrigo M.': 39,'Javier L.': 37,},
+'19': {'Santiago L.': 46,'Gabriel A..': 46,'Rodrigo M.': 40,'Javier L.': 38,},
+'20': {'Gabriel A..': 47,'Santiago L.': 46,'Rodrigo M.': 40,'Javier L.': 38,},
+'21': {'Gabriel A..': 48,'Santiago L.': 46,'Rodrigo M.': 40,'Javier L.': 39,},
+'22': {'Gabriel A..': 52,'Santiago L.': 50,'Rodrigo M.': 44,'Javier L.': 43,},
+'23': {'Santiago L.': 54,'Gabriel A..': 53,'Rodrigo M.': 45,'Javier L.': 44,},
+'24': {'Santiago L.': 58,'Gabriel A..': 56,'Rodrigo M.': 49,'Javier L.': 47,},
+'25': {'Santiago L.': 58,'Rodrigo M.': 57,'Gabriel A..': 57,'Javier L.': 50,},
+'26': {'Santiago L.': 58,'Rodrigo M.': 57,'Gabriel A..': 57,'Javier L.': 50,},
+'27': {'Santiago L.': 62,'Rodrigo M.': 61,'Gabriel A..': 57,'Javier L.': 51,},
+'28': {'Rodrigo M.': 64,'Santiago L.': 62,'Gabriel A..': 60,'Javier L.': 51,},
+'29': {'Rodrigo M.': 64,'Gabriel A..': 63,'Santiago L.': 62,'Javier L.': 51,},
+'30': {'Rodrigo M.': 64,'Gabriel A..': 64,'Santiago L.': 62,'Javier L.': 52,},
+'31': {'Rodrigo M.': 67,'Gabriel A..': 67,'Santiago L.': 65,'Javier L.': 56,},
+'32': {'Gabriel A..': 71,'Santiago L.': 69,'Rodrigo M.': 68,'Javier L.': 57,},
+'33': {'Gabriel A..': 79,'Santiago L.': 73,'Rodrigo M.': 72,'Javier L.': 65,},
+'34': {'Gabriel A..': 82,'Santiago L.': 74,'Rodrigo M.': 73,'Javier L.': 65,},
+'35': {'Gabriel A..': 85,'Santiago L.': 77,'Rodrigo M.': 76,'Javier L.': 69,},
+'36': {'Gabriel A..': 88,'Santiago L.': 80,'Javier L.': 77,'Rodrigo M.': 77,},
+'37': {'Gabriel A..': 88,'Santiago L.': 80,'Javier L.': 77,'Rodrigo M.': 77,},
+'38': {'Gabriel A..': 89,'Santiago L.': 80,'Javier L.': 78,'Rodrigo M.': 78,},
+'39': {'Gabriel A..': 93,'Santiago L.': 83,'Javier L.': 82,'Rodrigo M.': 81,},
+'40': {'Gabriel A..': 97,'Santiago L.': 87,'Javier L.': 86,'Rodrigo M.': 82,},
+'41': {'Gabriel A..': 98,'Santiago L.': 90,'Javier L.': 86,'Rodrigo M.': 82,},
+'42': {'Gabriel A..': 99,'Santiago L.': 91,'Javier L.': 87,'Rodrigo M.': 82,},
+'43': {'Gabriel A..': 99,'Santiago L.': 91,'Javier L.': 88,'Rodrigo M.': 83,},
+'44': {'Gabriel A..': 102,'Santiago L.': 94,'Javier L.': 88,'Rodrigo M.': 86,},
+'45': {'Gabriel A..': 102,'Santiago L.': 94,'Javier L.': 89,'Rodrigo M.': 86,},
+'46': {'Gabriel A..': 106,'Santiago L.': 98,'Javier L.': 97,'Rodrigo M.': 94,},
+'47': {'Gabriel A..': 106,'Santiago L.': 98,'Javier L.': 97,'Rodrigo M.': 94,},
+'48': {'Gabriel A..': 109,'Santiago L.': 99,'Javier L.': 97,'Rodrigo M.': 97,},
+'49': {'Gabriel A..': 112,'Santiago L.': 103,'Rodrigo M.': 101,'Javier L.': 100,},
+'50': {'Gabriel A..': 116,'Santiago L.': 106,'Rodrigo M.': 105,'Javier L.': 104,},
+'51': {'Gabriel A..': 120,'Rodrigo M.': 113,'Santiago L.': 110,'Javier L.': 107,},
+'52': {'Gabriel A..': 120,'Rodrigo M.': 116,'Santiago L.': 114,'Javier L.': 111,},
+'53': {'Rodrigo M.': 124,'Gabriel A..': 121,'Javier L.': 119,'Santiago L.': 115,},
+'54': {'Rodrigo M.': 128,'Gabriel A..': 124,'Javier L.': 122,'Santiago L.': 118,},
+'55': {'Rodrigo M.': 128,'Gabriel A..': 124,'Javier L.': 122,'Santiago L.': 118,},
+'56': {'Rodrigo M.': 129,'Gabriel A..': 128,'Javier L.': 122,'Santiago L.': 122,},
+'57': {'Rodrigo M.': 130,'Gabriel A..': 128,'Javier L.': 123,'Santiago L.': 123,},
+'58': {'Rodrigo M.': 131,'Gabriel A..': 129,'Javier L.': 124,'Santiago L.': 124,},
+'59': {'Rodrigo M.': 132,'Gabriel A..': 129,'Javier L.': 124,'Santiago L.': 124,},
+'60': {'Rodrigo M.': 140,'Gabriel A..': 130,'Santiago L.': 127,'Javier L.': 125,},
+'61': {'Rodrigo M.': 144,'Gabriel A..': 134,'Santiago L.': 130,'Javier L.': 129,},
+'62': {'Rodrigo M.': 148,'Santiago L.': 138,'Gabriel A..': 134,'Javier L.': 129,},
+'63': {'Rodrigo M.': 152,'Santiago L.': 139,'Gabriel A..': 135,'Javier L.': 132,},
+'64': {'Rodrigo M.': 152,'Santiago L.': 140,'Gabriel A..': 135,'Javier L.': 132,}
+
+
+    };
+    
+    
+    // Create root element
+    // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+    var root = am5.Root.new("chartdivPibs");
+    
+    root.numberFormatter.setAll({
+      numberFormat: "#a",
+    
+      // Group only into M (millions), and B (billions)
+      bigNumberPrefixes: [
+        { number: 1e6, suffix: "M" },
+        { number: 1e9, suffix: "B" }
+      ],
+    
+      // Do not use small number prefixes at all
+      smallNumberPrefixes: []
+    });
+    
+    var stepDuration = 2000;
+    
+    
+    // Set themes
+    // https://www.amcharts.com/docs/v5/concepts/themes/
+    root.setThemes([am5themes_Animated.new(root)]);
+    
+    
+    // Create chart
+    // https://www.amcharts.com/docs/v5/charts/xy-chart/
+    var chart = root.container.children.push(am5xy.XYChart.new(root, {
+      panX: true,
+      panY: true,
+      wheelX: "none",
+      wheelY: "none"
+    }));
+    
+    
+    // We don't want zoom-out button to appear while animating, so we hide it at all
+    chart.zoomOutButton.set("forceHidden", true);
+    
+    
+    // Create axes
+    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+    var yRenderer = am5xy.AxisRendererY.new(root, {
+      minGridDistance: 20,
+      inversed: true
+    });
+    // hide grid
+    yRenderer.grid.template.set("visible", false);
+    
+    var yAxis = chart.yAxes.push(am5xy.CategoryAxis.new(root, {
+      maxDeviation: 0,
+      categoryField: "network",
+      renderer: yRenderer
+    }));
+    
+    var xAxis = chart.xAxes.push(am5xy.ValueAxis.new(root, {
+      maxDeviation: 0,
+      min: 0,
+      strictMinMax: true,
+      extraMax: 0.1,
+      renderer: am5xy.AxisRendererX.new(root, {})
+    }));
+    
+    xAxis.set("interpolationDuration", stepDuration / 10);
+    xAxis.set("interpolationEasing", am5.ease.linear);
+    
+    
+    // Add series
+    // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+    var series = chart.series.push(am5xy.ColumnSeries.new(root, {
+      xAxis: xAxis,
+      yAxis: yAxis,
+      valueXField: "value",
+      categoryYField: "network"
+    }));
+    
+    // Rounded corners for columns
+    series.columns.template.setAll({ cornerRadiusBR: 5, cornerRadiusTR: 5 });
+    
+    // Make each column to be of a different color
+    series.columns.template.adapters.add("fill", function (fill, target) {
+      return chart.get("colors").getIndex(series.columns.indexOf(target));
+    });
+    
+    series.columns.template.adapters.add("stroke", function (stroke, target) {
+      return chart.get("colors").getIndex(series.columns.indexOf(target));
+    });
+    
+    // Add label bullet
+    series.bullets.push(function () {
+      return am5.Bullet.new(root, {
+        locationX: 1,
+        sprite: am5.Label.new(root, {
+          text: "{valueXWorking.formatNumber('#.# a')}",
+          fill: root.interfaceColors.get("alternativeText"),
+          centerX: am5.p100,
+          centerY: am5.p50,
+          populateText: true
+        })
+      });
+    });
+    
+    var label = chart.plotContainer.children.push(am5.Label.new(root, {
+      text: "1",
+      fontSize: "8em",
+      opacity: 0.2,
+      x: am5.p100,
+      y: am5.p100,
+      centerY: am5.p100,
+      centerX: am5.p100
+    }));
+    
+    // Get series item by category
+    function getSeriesItem(category) {
+      for (var i = 0; i < series.dataItems.length; i++) {
+        var dataItem = series.dataItems[i];
+        if (dataItem.get("categoryY") == category) {
+          return dataItem;
+        }
+      }
+    }
+    
+    // Axis sorting
+    function sortCategoryAxis() {
+      // sort by value
+      series.dataItems.sort(function (x, y) {
+        return y.get("valueX") - x.get("valueX"); // descending
+        //return x.get("valueX") - y.get("valueX"); // ascending
+      });
+    
+      // go through each axis item
+      am5.array.each(yAxis.dataItems, function (dataItem) {
+        // get corresponding series item
+        var seriesDataItem = getSeriesItem(dataItem.get("category"));
+    
+        if (seriesDataItem) {
+          // get index of series data item
+          var index = series.dataItems.indexOf(seriesDataItem);
+          // calculate delta position
+          var deltaPosition =
+            (index - dataItem.get("index", 0)) / series.dataItems.length;
+          // set index to be the same as series data item index
+          if (dataItem.get("index") != index) {
+            dataItem.set("index", index);
+            // set deltaPosition instanlty
+            dataItem.set("deltaPosition", -deltaPosition);
+            // animate delta position to 0
+            dataItem.animate({
+              key: "deltaPosition",
+              to: 0,
+              duration: stepDuration / 2,
+              easing: am5.ease.out(am5.ease.cubic)
+            });
+          }
+        }
+      });
+      // sort axis items by index.
+      // This changes the order instantly, but as deltaPosition is set, they keep in the same places and then animate to true positions.
+      yAxis.dataItems.sort(function (x, y) {
+        return x.get("index") - y.get("index");
+      });
+    }
+    
+    var year = 1;
+    
+    // update data with values each 1.5 sec
+    var interval = setInterval(function () {
+      year++;
+    
+      if (year > 64) {
+        clearInterval(interval);
+        clearInterval(sortInterval);
+      }
+    
+      updateData();
+    }, stepDuration);
+    
+    var sortInterval = setInterval(function () {
+      sortCategoryAxis();
+    }, 100);
+    
+    function setInitialData() {
+      var d = allData[year];
+    
+      for (var n in d) {
+        series.data.push({ network: n, value: d[n] });
+        yAxis.data.push({ network: n });
+      }
+    }
+    
+    function updateData() {
+      var itemsWithNonZero = 0;
+    
+      if (allData[year]) {
+        label.set("text", year.toString());
+    
+        am5.array.each(series.dataItems, function (dataItem) {
+          var category = dataItem.get("categoryY");
+          var value = allData[year][category];
+    
+          if (value > 0) {
+            itemsWithNonZero++;
+          }
+    
+          dataItem.animate({
+            key: "valueX",
+            to: value,
+            duration: stepDuration,
+            easing: am5.ease.linear
+          });
+          dataItem.animate({
+            key: "valueXWorking",
+            to: value,
+            duration: stepDuration,
+            easing: am5.ease.linear
+          });
+        });
+    
+        yAxis.zoom(0, itemsWithNonZero / yAxis.dataItems.length);
+      }
+    }
+    
+    setInitialData();
+    setTimeout(function () {
+      year++;
+      updateData();
+    }, 50);
+    
+    // Make stuff animate on load
+    // https://www.amcharts.com/docs/v5/concepts/animations/
+    series.appear(1000);
+    chart.appear(1000, 100);
+    
+    }); // end am5.ready()
+    </script>
+    
+    <!-- HTML -->
+    <div id="chartdivPibs"></div>

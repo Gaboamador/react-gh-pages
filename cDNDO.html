@@ -1,0 +1,324 @@
+<!-- Styles -->
+<style>
+    #chartdivDNDO {
+      width: 100%;
+      height: 800px;
+    }
+    </style>
+    
+    <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    
+    <!-- Chart code -->
+    <script>
+    am5.ready(function() {
+    
+    // Data
+    var allData = {
+        '1': {'Julián V.': 8,'Matías F.': 8,'Pablo L.': 8,'Silvina S.': 8,'Alan C.': 4,'Diana B.': 4,'Florencia A.': 4,'Gabriel A. J.': 4,'Gonzalo Z.': 4,'Guadalupe M.': 4,'Inés D.': 4,'Juan A.': 4,'Luis P.': 4,'Mónica M.': 4,'Tomás V.': 4,'Aldana P.': 1,'Gerardo F.': 1,'Matías V.': 1,'Sebastián F.': 1,'Graciela T.': 0,'Julieta P.': 0,'Karin C.': 0,'Liza M.': 0,'Lucía R.': 0,'Martín G.': 0,'Pablo V.': 0,},
+'2': {'Julián V.': 11,'Matías F.': 11,'Pablo L.': 11,'Silvina S.': 11,'Alan C.': 7,'Diana B.': 7,'Florencia A.': 7,'Gabriel A. J.': 7,'Gonzalo Z.': 7,'Guadalupe M.': 7,'Inés D.': 7,'Juan A.': 7,'Luis P.': 7,'Mónica M.': 7,'Tomás V.': 7,'Aldana P.': 4,'Gerardo F.': 4,'Karin C.': 4,'Sebastián F.': 4,'Graciela T.': 3,'Julieta P.': 3,'Liza M.': 3,'Lucía R.': 3,'Pablo V.': 3,'Martín G.': 1,'Matías V.': 1,},
+'3': {'Guadalupe M.': 15,'Pablo L.': 15,'Silvina S.': 15,'Julián V.': 14,'Karin C.': 12,'Julieta P.': 11,'Matías F.': 11,'Pablo V.': 11,'Alan C.': 11,'Diana B.': 11,'Gabriel A. J.': 11,'Inés D.': 11,'Luis P.': 11,'Tomás V.': 11,'Florencia A.': 10,'Gonzalo Z.': 10,'Juan A.': 10,'Aldana P.': 8,'Gerardo F.': 8,'Sebastián F.': 8,'Liza M.': 7,'Lucía R.': 7,'Mónica M.': 7,'Graciela T.': 6,'Matías V.': 5,'Martín G.': 4,},
+'4': {'Guadalupe M.': 23,'Julián V.': 22,'Matías F.': 19,'Pablo V.': 19,'Alan C.': 19,'Gabriel A. J.': 19,'Luis P.': 19,'Tomás V.': 19,'Gerardo F.': 16,'Silvina S.': 16,'Lucía R.': 15,'Mónica M.': 15,'Pablo L.': 15,'Karin C.': 13,'Florencia A.': 13,'Julieta P.': 12,'Martín G.': 12,'Diana B.': 12,'Inés D.': 12,'Gonzalo Z.': 11,'Juan A.': 11,'Liza M.': 10,'Aldana P.': 9,'Sebastián F.': 9,'Matías V.': 8,'Graciela T.': 7,},
+'5': {'Guadalupe M.': 23,'Julián V.': 22,'Matías F.': 19,'Pablo V.': 19,'Alan C.': 19,'Gabriel A. J.': 19,'Luis P.': 19,'Tomás V.': 19,'Gerardo F.': 16,'Silvina S.': 16,'Lucía R.': 15,'Mónica M.': 15,'Pablo L.': 15,'Karin C.': 13,'Florencia A.': 13,'Julieta P.': 12,'Martín G.': 12,'Diana B.': 12,'Inés D.': 12,'Gonzalo Z.': 11,'Juan A.': 11,'Liza M.': 10,'Aldana P.': 9,'Sebastián F.': 9,'Matías V.': 8,'Graciela T.': 7,},
+'6': {'Guadalupe M.': 24,'Julián V.': 23,'Martín G.': 20,'Matías F.': 20,'Pablo V.': 20,'Alan C.': 20,'Gabriel A. J.': 20,'Luis P.': 20,'Tomás V.': 20,'Lucía R.': 18,'Silvina S.': 17,'Gerardo F.': 16,'Pablo L.': 16,'Mónica M.': 15,'Florencia A.': 14,'Julieta P.': 13,'Karin C.': 13,'Diana B.': 12,'Inés D.': 12,'Juan A.': 12,'Gonzalo Z.': 11,'Liza M.': 10,'Sebastián F.': 10,'Aldana P.': 9,'Matías V.': 8,'Graciela T.': 7,},
+'7': {'Julián V.': 31,'Matías F.': 28,'Guadalupe M.': 25,'Martín G.': 23,'Alan C.': 23,'Gabriel A. J.': 23,'Luis P.': 23,'Lucía R.': 21,'Tomás V.': 21,'Pablo V.': 20,'Silvina S.': 20,'Gerardo F.': 19,'Pablo L.': 17,'Mónica M.': 15,'Inés D.': 15,'Florencia A.': 14,'Julieta P.': 13,'Karin C.': 13,'Liza M.': 13,'Diana B.': 12,'Juan A.': 12,'Gonzalo Z.': 11,'Matías V.': 11,'Sebastián F.': 10,'Aldana P.': 9,'Graciela T.': 7,},
+'8': {'Julián V.': 34,'Matías F.': 31,'Guadalupe M.': 28,'Martín G.': 27,'Alan C.': 27,'Gabriel A. J.': 26,'Luis P.': 26,'Lucía R.': 25,'Silvina S.': 24,'Tomás V.': 24,'Pablo V.': 23,'Gerardo F.': 22,'Mónica M.': 19,'Inés D.': 19,'Florencia A.': 18,'Karin C.': 17,'Pablo L.': 17,'Julieta P.': 16,'Liza M.': 16,'Diana B.': 15,'Gonzalo Z.': 15,'Juan A.': 15,'Matías V.': 14,'Aldana P.': 13,'Sebastián F.': 13,'Graciela T.': 11,},
+'9': {'Julián V.': 34,'Matías F.': 32,'Martín G.': 30,'Guadalupe M.': 29,'Luis P.': 29,'Alan C.': 27,'Gabriel A. J.': 27,'Tomás V.': 27,'Lucía R.': 26,'Pablo L.': 25,'Silvina S.': 25,'Pablo V.': 24,'Gerardo F.': 22,'Mónica M.': 20,'Inés D.': 20,'Florencia A.': 19,'Karin C.': 17,'Julieta P.': 16,'Aldana P.': 16,'Gonzalo Z.': 16,'Juan A.': 16,'Liza M.': 16,'Diana B.': 15,'Matías V.': 14,'Sebastián F.': 14,'Graciela T.': 11,},
+'10': {'Julián V.': 34,'Matías F.': 33,'Martín G.': 30,'Guadalupe M.': 29,'Luis P.': 29,'Alan C.': 27,'Gabriel A. J.': 27,'Tomás V.': 27,'Lucía R.': 26,'Pablo L.': 25,'Silvina S.': 25,'Pablo V.': 24,'Gerardo F.': 22,'Mónica M.': 20,'Inés D.': 20,'Florencia A.': 19,'Karin C.': 18,'Juan A.': 17,'Julieta P.': 16,'Aldana P.': 16,'Gonzalo Z.': 16,'Liza M.': 16,'Diana B.': 15,'Matías V.': 14,'Sebastián F.': 14,'Graciela T.': 11,},
+'11': {'Julián V.': 37,'Matías F.': 37,'Martín G.': 34,'Guadalupe M.': 33,'Luis P.': 32,'Alan C.': 31,'Gabriel A. J.': 31,'Tomás V.': 31,'Lucía R.': 30,'Pablo L.': 29,'Pablo V.': 28,'Silvina S.': 28,'Gerardo F.': 25,'Inés D.': 23,'Florencia A.': 22,'Karin C.': 21,'Juan A.': 21,'Julieta P.': 20,'Mónica M.': 20,'Aldana P.': 20,'Liza M.': 20,'Diana B.': 19,'Gonzalo Z.': 19,'Sebastián F.': 18,'Graciela T.': 14,'Matías V.': 14,},
+'12': {'Julián V.': 41,'Matías F.': 38,'Lucía R.': 38,'Guadalupe M.': 36,'Luis P.': 36,'Martín G.': 34,'Gabriel A. J.': 34,'Tomás V.': 34,'Pablo L.': 33,'Alan C.': 32,'Pablo V.': 31,'Silvina S.': 31,'Gerardo F.': 28,'Florencia A.': 25,'Julieta P.': 24,'Karin C.': 24,'Juan A.': 24,'Mónica M.': 23,'Aldana P.': 23,'Diana B.': 23,'Inés D.': 23,'Liza M.': 23,'Gonzalo Z.': 22,'Sebastián F.': 21,'Matías V.': 18,'Graciela T.': 17,},
+'13': {'Julián V.': 45,'Tomás V.': 42,'Guadalupe M.': 40,'Matías F.': 39,'Pablo V.': 39,'Lucía R.': 38,'Martín G.': 37,'Gerardo F.': 36,'Pablo L.': 36,'Luis P.': 36,'Alan C.': 35,'Gabriel A. J.': 35,'Silvina S.': 31,'Karin C.': 28,'Juan A.': 28,'Matías V.': 26,'Aldana P.': 26,'Florencia A.': 26,'Gonzalo Z.': 25,'Julieta P.': 24,'Mónica M.': 24,'Diana B.': 24,'Inés D.': 24,'Liza M.': 24,'Sebastián F.': 22,'Graciela T.': 17,},
+'14': {'Julián V.': 46,'Tomás V.': 43,'Pablo V.': 42,'Guadalupe M.': 41,'Lucía R.': 41,'Matías F.': 40,'Martín G.': 38,'Pablo L.': 37,'Luis P.': 37,'Gerardo F.': 36,'Alan C.': 36,'Gabriel A. J.': 35,'Silvina S.': 32,'Karin C.': 29,'Juan A.': 29,'Matías V.': 27,'Aldana P.': 26,'Florencia A.': 26,'Gonzalo Z.': 26,'Julieta P.': 25,'Diana B.': 25,'Inés D.': 25,'Mónica M.': 24,'Liza M.': 24,'Sebastián F.': 22,'Graciela T.': 17,},
+'15': {'Julián V.': 49,'Tomás V.': 46,'Pablo V.': 45,'Guadalupe M.': 44,'Lucía R.': 44,'Matías F.': 41,'Martín G.': 41,'Pablo L.': 40,'Luis P.': 40,'Alan C.': 39,'Gabriel A. J.': 38,'Gerardo F.': 36,'Silvina S.': 35,'Gonzalo Z.': 34,'Juan A.': 33,'Karin C.': 32,'Matías V.': 30,'Florencia A.': 30,'Julieta P.': 29,'Aldana P.': 29,'Diana B.': 28,'Inés D.': 28,'Mónica M.': 25,'Sebastián F.': 25,'Liza M.': 24,'Graciela T.': 21,},
+'16': {'Tomás V.': 54,'Julián V.': 53,'Pablo V.': 49,'Lucía R.': 48,'Alan C.': 47,'Guadalupe M.': 47,'Matías F.': 45,'Martín G.': 45,'Pablo L.': 44,'Luis P.': 44,'Gabriel A. J.': 42,'Gerardo F.': 39,'Silvina S.': 38,'Gonzalo Z.': 37,'Juan A.': 37,'Karin C.': 35,'Matías V.': 34,'Julieta P.': 33,'Florencia A.': 33,'Aldana P.': 32,'Diana B.': 31,'Inés D.': 31,'Mónica M.': 28,'Liza M.': 28,'Sebastián F.': 28,'Graciela T.': 24,},
+'17': {'Julián V.': 57,'Tomás V.': 54,'Pablo V.': 49,'Lucía R.': 48,'Alan C.': 47,'Guadalupe M.': 47,'Martín G.': 46,'Matías F.': 45,'Pablo L.': 45,'Luis P.': 45,'Gabriel A. J.': 42,'Gerardo F.': 39,'Karin C.': 39,'Silvina S.': 38,'Juan A.': 38,'Gonzalo Z.': 37,'Mónica M.': 36,'Matías V.': 35,'Julieta P.': 33,'Florencia A.': 33,'Aldana P.': 32,'Diana B.': 31,'Inés D.': 31,'Liza M.': 28,'Sebastián F.': 28,'Graciela T.': 24,},
+'18': {'Julián V.': 61,'Tomás V.': 57,'Matías F.': 53,'Pablo V.': 53,'Lucía R.': 51,'Guadalupe M.': 50,'Alan C.': 48,'Martín G.': 46,'Pablo L.': 46,'Luis P.': 46,'Gabriel A. J.': 45,'Gerardo F.': 43,'Silvina S.': 41,'Karin C.': 39,'Juan A.': 39,'Matías V.': 38,'Gonzalo Z.': 37,'Mónica M.': 36,'Florencia A.': 36,'Julieta P.': 34,'Aldana P.': 32,'Diana B.': 32,'Inés D.': 32,'Sebastián F.': 31,'Liza M.': 28,'Graciela T.': 24,},
+'19': {'Julián V.': 61,'Tomás V.': 58,'Matías F.': 54,'Pablo V.': 54,'Lucía R.': 51,'Guadalupe M.': 50,'Alan C.': 49,'Martín G.': 49,'Pablo L.': 49,'Juan A.': 47,'Luis P.': 47,'Gabriel A. J.': 46,'Gerardo F.': 43,'Silvina S.': 41,'Karin C.': 40,'Matías V.': 38,'Mónica M.': 37,'Gonzalo Z.': 37,'Liza M.': 36,'Florencia A.': 36,'Julieta P.': 34,'Inés D.': 33,'Aldana P.': 32,'Diana B.': 32,'Sebastián F.': 32,'Graciela T.': 25,},
+'20': {'Julián V.': 62,'Tomás V.': 59,'Pablo V.': 55,'Matías F.': 54,'Alan C.': 52,'Lucía R.': 52,'Pablo L.': 52,'Guadalupe M.': 51,'Martín G.': 49,'Luis P.': 48,'Gabriel A. J.': 47,'Juan A.': 47,'Silvina S.': 44,'Gerardo F.': 43,'Karin C.': 41,'Matías V.': 39,'Gonzalo Z.': 38,'Mónica M.': 37,'Liza M.': 37,'Florencia A.': 37,'Julieta P.': 35,'Inés D.': 34,'Sebastián F.': 33,'Aldana P.': 32,'Diana B.': 32,'Graciela T.': 25,},
+'21': {'Tomás V.': 67,'Julián V.': 63,'Pablo V.': 58,'Matías F.': 55,'Guadalupe M.': 55,'Pablo L.': 55,'Alan C.': 53,'Lucía R.': 52,'Martín G.': 50,'Luis P.': 49,'Gabriel A. J.': 48,'Juan A.': 48,'Matías V.': 47,'Silvina S.': 45,'Gerardo F.': 44,'Karin C.': 44,'Mónica M.': 40,'Gonzalo Z.': 39,'Liza M.': 38,'Florencia A.': 38,'Julieta P.': 36,'Aldana P.': 35,'Inés D.': 34,'Sebastián F.': 33,'Diana B.': 32,'Graciela T.': 26,},
+'22': {'Tomás V.': 75,'Julián V.': 67,'Pablo V.': 66,'Matías F.': 63,'Guadalupe M.': 63,'Alan C.': 61,'Martín G.': 58,'Lucía R.': 55,'Pablo L.': 55,'Gabriel A. J.': 52,'Luis P.': 52,'Matías V.': 51,'Juan A.': 49,'Silvina S.': 49,'Gerardo F.': 48,'Karin C.': 48,'Liza M.': 46,'Gonzalo Z.': 43,'Florencia A.': 42,'Mónica M.': 41,'Sebastián F.': 41,'Aldana P.': 39,'Inés D.': 38,'Julieta P.': 36,'Diana B.': 36,'Graciela T.': 30,},
+'23': {'Tomás V.': 76,'Julián V.': 75,'Guadalupe M.': 71,'Pablo V.': 67,'Matías F.': 64,'Pablo L.': 63,'Alan C.': 61,'Martín G.': 59,'Matías V.': 59,'Lucía R.': 58,'Silvina S.': 57,'Gerardo F.': 56,'Liza M.': 54,'Gabriel A. J.': 53,'Luis P.': 53,'Juan A.': 52,'Gonzalo Z.': 51,'Karin C.': 51,'Florencia A.': 50,'Julieta P.': 44,'Diana B.': 44,'Aldana P.': 43,'Mónica M.': 42,'Sebastián F.': 42,'Inés D.': 42,'Graciela T.': 31,},
+'24': {'Tomás V.': 84,'Julián V.': 83,'Guadalupe M.': 74,'Pablo V.': 71,'Matías F.': 67,'Pablo L.': 67,'Silvina S.': 65,'Alan C.': 64,'Matías V.': 62,'Lucía R.': 62,'Luis P.': 61,'Gerardo F.': 59,'Martín G.': 59,'Karin C.': 59,'Liza M.': 58,'Gabriel A. J.': 56,'Juan A.': 56,'Gonzalo Z.': 54,'Florencia A.': 54,'Sebastián F.': 50,'Diana B.': 48,'Julieta P.': 47,'Aldana P.': 47,'Mónica M.': 46,'Inés D.': 46,'Graciela T.': 34,},
+'25': {'Tomás V.': 84,'Julián V.': 84,'Guadalupe M.': 82,'Pablo V.': 72,'Matías F.': 68,'Pablo L.': 67,'Silvina S.': 65,'Alan C.': 64,'Matías V.': 63,'Lucía R.': 63,'Luis P.': 62,'Gerardo F.': 60,'Liza M.': 59,'Martín G.': 59,'Karin C.': 59,'Gonzalo Z.': 57,'Gabriel A. J.': 57,'Juan A.': 56,'Florencia A.': 55,'Inés D.': 54,'Sebastián F.': 53,'Aldana P.': 50,'Julieta P.': 48,'Diana B.': 48,'Mónica M.': 46,'Graciela T.': 35,},
+'26': {'Tomás V.': 84,'Julián V.': 84,'Guadalupe M.': 82,'Pablo V.': 72,'Matías F.': 68,'Pablo L.': 67,'Alan C.': 65,'Silvina S.': 65,'Matías V.': 63,'Lucía R.': 63,'Luis P.': 62,'Gerardo F.': 60,'Martín G.': 60,'Karin C.': 60,'Liza M.': 59,'Gonzalo Z.': 57,'Gabriel A. J.': 57,'Juan A.': 56,'Florencia A.': 55,'Inés D.': 55,'Sebastián F.': 53,'Aldana P.': 50,'Julieta P.': 48,'Diana B.': 48,'Mónica M.': 46,'Graciela T.': 35,},
+'27': {'Julián V.': 88,'Tomás V.': 87,'Guadalupe M.': 83,'Pablo V.': 75,'Matías F.': 69,'Alan C.': 69,'Silvina S.': 69,'Pablo L.': 68,'Matías V.': 66,'Lucía R.': 66,'Luis P.': 65,'Martín G.': 64,'Karin C.': 64,'Gerardo F.': 63,'Liza M.': 62,'Gonzalo Z.': 60,'Juan A.': 59,'Florencia A.': 58,'Gabriel A. J.': 57,'Sebastián F.': 56,'Inés D.': 56,'Julieta P.': 51,'Diana B.': 51,'Aldana P.': 50,'Mónica M.': 47,'Graciela T.': 39,},
+'28': {'Tomás V.': 95,'Julián V.': 89,'Guadalupe M.': 84,'Pablo V.': 76,'Pablo L.': 71,'Alan C.': 70,'Silvina S.': 70,'Matías F.': 69,'Luis P.': 68,'Karin C.': 67,'Lucía R.': 67,'Matías V.': 66,'Liza M.': 65,'Martín G.': 65,'Gerardo F.': 64,'Gonzalo Z.': 61,'Gabriel A. J.': 60,'Juan A.': 60,'Florencia A.': 58,'Sebastián F.': 56,'Inés D.': 56,'Julieta P.': 54,'Diana B.': 52,'Aldana P.': 50,'Mónica M.': 48,'Graciela T.': 42,},
+'29': {'Tomás V.': 95,'Julián V.': 89,'Guadalupe M.': 87,'Pablo V.': 76,'Pablo L.': 74,'Silvina S.': 73,'Alan C.': 70,'Karin C.': 70,'Matías F.': 69,'Liza M.': 68,'Martín G.': 68,'Luis P.': 68,'Gerardo F.': 67,'Lucía R.': 67,'Matías V.': 66,'Gonzalo Z.': 64,'Gabriel A. J.': 63,'Florencia A.': 61,'Juan A.': 60,'Inés D.': 59,'Sebastián F.': 56,'Julieta P.': 55,'Diana B.': 55,'Mónica M.': 51,'Aldana P.': 50,'Graciela T.': 43,},
+'30': {'Tomás V.': 96,'Julián V.': 89,'Guadalupe M.': 87,'Pablo V.': 79,'Silvina S.': 76,'Pablo L.': 74,'Karin C.': 74,'Martín G.': 72,'Alan C.': 71,'Luis P.': 71,'Lucía R.': 70,'Matías F.': 69,'Liza M.': 68,'Gerardo F.': 67,'Gonzalo Z.': 67,'Matías V.': 66,'Gabriel A. J.': 64,'Florencia A.': 61,'Juan A.': 61,'Sebastián F.': 59,'Inés D.': 59,'Diana B.': 58,'Julieta P.': 56,'Mónica M.': 54,'Aldana P.': 50,'Graciela T.': 43,},
+'31': {'Tomás V.': 100,'Julián V.': 92,'Guadalupe M.': 90,'Pablo V.': 82,'Silvina S.': 80,'Matías F.': 77,'Pablo L.': 77,'Karin C.': 77,'Martín G.': 76,'Alan C.': 75,'Matías V.': 74,'Lucía R.': 74,'Luis P.': 74,'Liza M.': 72,'Gonzalo Z.': 70,'Gerardo F.': 67,'Gabriel A. J.': 67,'Florencia A.': 64,'Juan A.': 64,'Sebastián F.': 63,'Inés D.': 63,'Diana B.': 62,'Mónica M.': 58,'Julieta P.': 56,'Aldana P.': 53,'Graciela T.': 46,},
+'32': {'Tomás V.': 100,'Julián V.': 92,'Guadalupe M.': 90,'Pablo V.': 82,'Matías F.': 80,'Silvina S.': 80,'Alan C.': 79,'Pablo L.': 78,'Karin C.': 78,'Lucía R.': 78,'Martín G.': 77,'Luis P.': 75,'Matías V.': 74,'Liza M.': 72,'Gerardo F.': 71,'Gonzalo Z.': 71,'Gabriel A. J.': 71,'Juan A.': 68,'Sebastián F.': 67,'Mónica M.': 66,'Diana B.': 66,'Florencia A.': 64,'Inés D.': 63,'Julieta P.': 60,'Aldana P.': 53,'Graciela T.': 47,},
+'33': {'Tomás V.': 104,'Julián V.': 96,'Guadalupe M.': 94,'Alan C.': 87,'Pablo V.': 86,'Matías F.': 84,'Luis P.': 83,'Silvina S.': 83,'Matías V.': 82,'Pablo L.': 82,'Lucía R.': 81,'Martín G.': 80,'Gabriel A. J.': 79,'Karin C.': 78,'Liza M.': 76,'Gonzalo Z.': 75,'Gerardo F.': 74,'Juan A.': 72,'Inés D.': 71,'Sebastián F.': 71,'Diana B.': 70,'Florencia A.': 67,'Mónica M.': 66,'Julieta P.': 60,'Aldana P.': 54,'Graciela T.': 47,},
+'34': {'Tomás V.': 104,'Julián V.': 97,'Guadalupe M.': 95,'Martín G.': 88,'Alan C.': 87,'Pablo V.': 87,'Matías F.': 84,'Luis P.': 84,'Silvina S.': 84,'Matías V.': 83,'Pablo L.': 82,'Gabriel A. J.': 82,'Lucía R.': 82,'Karin C.': 79,'Liza M.': 77,'Juan A.': 76,'Gerardo F.': 75,'Gonzalo Z.': 75,'Sebastián F.': 72,'Inés D.': 71,'Diana B.': 71,'Mónica M.': 70,'Florencia A.': 68,'Julieta P.': 61,'Graciela T.': 55,'Aldana P.': 55,},
+'35': {'Tomás V.': 105,'Julián V.': 101,'Guadalupe M.': 99,'Martín G.': 92,'Alan C.': 90,'Pablo V.': 90,'Matías F.': 88,'Luis P.': 88,'Silvina S.': 88,'Pablo L.': 86,'Gabriel A. J.': 85,'Lucía R.': 85,'Matías V.': 83,'Liza M.': 80,'Karin C.': 79,'Gonzalo Z.': 78,'Sebastián F.': 76,'Juan A.': 76,'Gerardo F.': 75,'Mónica M.': 74,'Inés D.': 74,'Diana B.': 74,'Florencia A.': 72,'Julieta P.': 69,'Graciela T.': 59,'Aldana P.': 59,},
+'36': {'Guadalupe M.': 107,'Tomás V.': 105,'Julián V.': 101,'Silvina S.': 96,'Alan C.': 94,'Martín G.': 93,'Matías F.': 91,'Pablo V.': 91,'Luis P.': 91,'Pablo L.': 89,'Gabriel A. J.': 88,'Lucía R.': 86,'Matías V.': 84,'Liza M.': 84,'Gonzalo Z.': 79,'Karin C.': 79,'Juan A.': 79,'Gerardo F.': 78,'Sebastián F.': 76,'Florencia A.': 76,'Diana B.': 75,'Mónica M.': 74,'Inés D.': 74,'Julieta P.': 73,'Aldana P.': 62,'Graciela T.': 60,},
+'37': {'Guadalupe M.': 107,'Tomás V.': 105,'Julián V.': 101,'Silvina S.': 97,'Alan C.': 94,'Martín G.': 93,'Luis P.': 92,'Matías F.': 91,'Pablo V.': 91,'Pablo L.': 89,'Gabriel A. J.': 88,'Lucía R.': 87,'Matías V.': 84,'Liza M.': 84,'Gerardo F.': 79,'Gonzalo Z.': 79,'Karin C.': 79,'Juan A.': 79,'Sebastián F.': 77,'Florencia A.': 77,'Diana B.': 76,'Julieta P.': 74,'Mónica M.': 74,'Inés D.': 74,'Aldana P.': 63,'Graciela T.': 61,},
+'38': {'Guadalupe M.': 108,'Tomás V.': 105,'Julián V.': 102,'Silvina S.': 97,'Alan C.': 94,'Martín G.': 93,'Luis P.': 93,'Matías F.': 92,'Pablo V.': 92,'Pablo L.': 89,'Gabriel A. J.': 89,'Lucía R.': 87,'Liza M.': 85,'Matías V.': 84,'Gonzalo Z.': 80,'Juan A.': 80,'Gerardo F.': 79,'Karin C.': 79,'Sebastián F.': 78,'Mónica M.': 77,'Diana B.': 77,'Florencia A.': 77,'Julieta P.': 75,'Inés D.': 75,'Aldana P.': 63,'Graciela T.': 62,},
+'39': {'Guadalupe M.': 112,'Tomás V.': 109,'Julián V.': 106,'Silvina S.': 101,'Matías F.': 100,'Pablo V.': 100,'Luis P.': 97,'Alan C.': 94,'Martín G.': 94,'Pablo L.': 93,'Gabriel A. J.': 93,'Lucía R.': 91,'Liza M.': 89,'Matías V.': 88,'Gonzalo Z.': 88,'Julieta P.': 83,'Gerardo F.': 83,'Juan A.': 83,'Karin C.': 82,'Mónica M.': 81,'Sebastián F.': 81,'Florencia A.': 80,'Inés D.': 79,'Diana B.': 77,'Aldana P.': 66,'Graciela T.': 65,},
+'40': {'Tomás V.': 117,'Guadalupe M.': 112,'Julián V.': 110,'Luis P.': 105,'Pablo V.': 104,'Matías F.': 103,'Pablo L.': 101,'Silvina S.': 101,'Martín G.': 97,'Gabriel A. J.': 97,'Lucía R.': 95,'Alan C.': 94,'Liza M.': 93,'Matías V.': 92,'Gonzalo Z.': 92,'Gerardo F.': 91,'Juan A.': 91,'Julieta P.': 86,'Karin C.': 86,'Sebastián F.': 85,'Inés D.': 83,'Florencia A.': 83,'Mónica M.': 81,'Diana B.': 80,'Aldana P.': 70,'Graciela T.': 69,},
+'41': {'Tomás V.': 120,'Guadalupe M.': 113,'Julián V.': 111,'Pablo V.': 107,'Matías F.': 106,'Luis P.': 105,'Pablo L.': 102,'Silvina S.': 101,'Martín G.': 100,'Gabriel A. J.': 98,'Lucía R.': 98,'Alan C.': 97,'Liza M.': 96,'Matías V.': 95,'Gerardo F.': 94,'Gonzalo Z.': 93,'Juan A.': 91,'Sebastián F.': 88,'Karin C.': 87,'Julieta P.': 86,'Florencia A.': 86,'Inés D.': 84,'Diana B.': 83,'Mónica M.': 81,'Aldana P.': 70,'Graciela T.': 69,},
+'42': {'Tomás V.': 121,'Julián V.': 114,'Guadalupe M.': 113,'Matías F.': 107,'Pablo V.': 107,'Luis P.': 106,'Pablo L.': 103,'Lucía R.': 102,'Martín G.': 101,'Silvina S.': 101,'Liza M.': 99,'Gabriel A. J.': 99,'Alan C.': 98,'Matías V.': 95,'Gerardo F.': 95,'Gonzalo Z.': 94,'Juan A.': 92,'Diana B.': 91,'Sebastián F.': 91,'Karin C.': 88,'Julieta P.': 87,'Florencia A.': 86,'Inés D.': 84,'Mónica M.': 81,'Graciela T.': 77,'Aldana P.': 71,},
+'43': {'Tomás V.': 121,'Julián V.': 115,'Guadalupe M.': 113,'Matías F.': 108,'Pablo V.': 107,'Luis P.': 107,'Pablo L.': 103,'Lucía R.': 102,'Martín G.': 101,'Silvina S.': 101,'Liza M.': 100,'Alan C.': 99,'Gabriel A. J.': 99,'Gerardo F.': 96,'Matías V.': 95,'Gonzalo Z.': 94,'Juan A.': 92,'Diana B.': 91,'Sebastián F.': 91,'Karin C.': 88,'Julieta P.': 87,'Florencia A.': 86,'Inés D.': 85,'Mónica M.': 82,'Aldana P.': 79,'Graciela T.': 77,},
+'44': {'Tomás V.': 124,'Julián V.': 118,'Guadalupe M.': 116,'Matías F.': 112,'Pablo V.': 110,'Luis P.': 110,'Pablo L.': 106,'Lucía R.': 106,'Martín G.': 104,'Silvina S.': 104,'Liza M.': 103,'Alan C.': 102,'Gabriel A. J.': 102,'Gerardo F.': 99,'Matías V.': 98,'Gonzalo Z.': 97,'Diana B.': 95,'Juan A.': 95,'Sebastián F.': 94,'Julieta P.': 91,'Karin C.': 91,'Florencia A.': 89,'Inés D.': 86,'Mónica M.': 83,'Aldana P.': 82,'Graciela T.': 81,},
+'45': {'Tomás V.': 124,'Julián V.': 118,'Guadalupe M.': 116,'Matías F.': 112,'Pablo V.': 111,'Luis P.': 110,'Pablo L.': 107,'Lucía R.': 106,'Martín G.': 104,'Silvina S.': 104,'Alan C.': 103,'Liza M.': 103,'Gabriel A. J.': 102,'Gerardo F.': 99,'Matías V.': 98,'Gonzalo Z.': 97,'Diana B.': 95,'Juan A.': 95,'Sebastián F.': 95,'Karin C.': 92,'Julieta P.': 91,'Florencia A.': 90,'Mónica M.': 86,'Inés D.': 86,'Aldana P.': 82,'Graciela T.': 81,},
+'46': {'Tomás V.': 128,'Julián V.': 122,'Guadalupe M.': 120,'Matías F.': 116,'Pablo L.': 115,'Luis P.': 114,'Pablo V.': 112,'Alan C.': 111,'Martín G.': 108,'Silvina S.': 107,'Matías V.': 106,'Gabriel A. J.': 106,'Lucía R.': 106,'Gerardo F.': 103,'Juan A.': 103,'Liza M.': 103,'Gonzalo Z.': 101,'Julieta P.': 99,'Diana B.': 99,'Sebastián F.': 99,'Karin C.': 92,'Aldana P.': 90,'Inés D.': 90,'Florencia A.': 90,'Mónica M.': 86,'Graciela T.': 85,},
+'47': {'Tomás V.': 128,'Julián V.': 122,'Guadalupe M.': 120,'Matías F.': 117,'Pablo L.': 115,'Luis P.': 115,'Alan C.': 112,'Pablo V.': 112,'Martín G.': 109,'Silvina S.': 108,'Matías V.': 106,'Gabriel A. J.': 106,'Lucía R.': 106,'Gerardo F.': 104,'Juan A.': 104,'Liza M.': 103,'Gonzalo Z.': 102,'Sebastián F.': 100,'Julieta P.': 99,'Diana B.': 99,'Karin C.': 93,'Inés D.': 91,'Aldana P.': 90,'Florencia A.': 90,'Mónica M.': 86,'Graciela T.': 86,},
+'48': {'Tomás V.': 128,'Guadalupe M.': 124,'Julián V.': 122,'Matías F.': 118,'Martín G.': 117,'Pablo L.': 116,'Alan C.': 115,'Luis P.': 115,'Pablo V.': 112,'Gabriel A. J.': 109,'Silvina S.': 108,'Matías V.': 107,'Lucía R.': 107,'Gonzalo Z.': 105,'Gerardo F.': 104,'Juan A.': 104,'Liza M.': 103,'Sebastián F.': 100,'Julieta P.': 99,'Diana B.': 99,'Karin C.': 96,'Graciela T.': 94,'Aldana P.': 93,'Inés D.': 91,'Florencia A.': 91,'Mónica M.': 86,},
+'49': {'Tomás V.': 132,'Guadalupe M.': 127,'Julián V.': 123,'Pablo L.': 120,'Matías F.': 119,'Martín G.': 117,'Alan C.': 115,'Luis P.': 115,'Pablo V.': 113,'Gabriel A. J.': 112,'Silvina S.': 109,'Gonzalo Z.': 109,'Matías V.': 108,'Lucía R.': 107,'Juan A.': 105,'Gerardo F.': 104,'Liza M.': 104,'Julieta P.': 103,'Diana B.': 103,'Sebastián F.': 101,'Karin C.': 100,'Aldana P.': 97,'Inés D.': 95,'Graciela T.': 94,'Florencia A.': 92,'Mónica M.': 86,},
+'50': {'Tomás V.': 136,'Guadalupe M.': 131,'Julián V.': 127,'Pablo L.': 124,'Matías F.': 123,'Luis P.': 119,'Alan C.': 118,'Martín G.': 117,'Pablo V.': 116,'Gabriel A. J.': 116,'Silvina S.': 113,'Matías V.': 112,'Gonzalo Z.': 112,'Julieta P.': 111,'Lucía R.': 111,'Juan A.': 109,'Gerardo F.': 108,'Karin C.': 108,'Liza M.': 108,'Diana B.': 107,'Aldana P.': 105,'Sebastián F.': 105,'Florencia A.': 100,'Inés D.': 99,'Graciela T.': 98,'Mónica M.': 90,},
+'51': {'Tomás V.': 139,'Guadalupe M.': 135,'Julián V.': 131,'Pablo L.': 127,'Matías F.': 126,'Martín G.': 125,'Luis P.': 122,'Alan C.': 121,'Silvina S.': 121,'Gabriel A. J.': 120,'Pablo V.': 119,'Gonzalo Z.': 116,'Matías V.': 115,'Lucía R.': 115,'Julieta P.': 114,'Juan A.': 113,'Karin C.': 112,'Gerardo F.': 111,'Liza M.': 111,'Diana B.': 110,'Aldana P.': 109,'Sebastián F.': 108,'Florencia A.': 103,'Graciela T.': 102,'Inés D.': 102,'Mónica M.': 93,},
+'52': {'Tomás V.': 143,'Guadalupe M.': 139,'Julián V.': 134,'Pablo L.': 131,'Matías F.': 129,'Martín G.': 125,'Alan C.': 125,'Silvina S.': 125,'Luis P.': 125,'Pablo V.': 123,'Gabriel A. J.': 120,'Gonzalo Z.': 119,'Lucía R.': 119,'Julieta P.': 118,'Sebastián F.': 116,'Matías V.': 115,'Gerardo F.': 115,'Karin C.': 115,'Liza M.': 114,'Diana B.': 114,'Juan A.': 113,'Aldana P.': 112,'Florencia A.': 107,'Inés D.': 106,'Graciela T.': 105,'Mónica M.': 93,},
+'53': {'Tomás V.': 151,'Julián V.': 142,'Guadalupe M.': 139,'Matías F.': 137,'Alan C.': 133,'Pablo L.': 132,'Pablo V.': 131,'Martín G.': 126,'Silvina S.': 126,'Luis P.': 125,'Gabriel A. J.': 121,'Gonzalo Z.': 120,'Lucía R.': 120,'Julieta P.': 119,'Matías V.': 118,'Gerardo F.': 116,'Sebastián F.': 116,'Karin C.': 115,'Liza M.': 115,'Diana B.': 115,'Juan A.': 113,'Aldana P.': 112,'Florencia A.': 110,'Inés D.': 107,'Graciela T.': 106,'Mónica M.': 94,},
+'54': {'Tomás V.': 154,'Julián V.': 145,'Guadalupe M.': 142,'Matías F.': 140,'Alan C.': 137,'Pablo V.': 135,'Pablo L.': 135,'Martín G.': 130,'Luis P.': 128,'Silvina S.': 127,'Gonzalo Z.': 124,'Gabriel A. J.': 124,'Julieta P.': 123,'Lucía R.': 123,'Matías V.': 122,'Gerardo F.': 120,'Karin C.': 119,'Sebastián F.': 119,'Liza M.': 118,'Diana B.': 118,'Aldana P.': 116,'Juan A.': 116,'Florencia A.': 114,'Inés D.': 111,'Graciela T.': 109,'Mónica M.': 97,},
+'55': {'Tomás V.': 155,'Julián V.': 146,'Guadalupe M.': 142,'Matías F.': 141,'Alan C.': 137,'Pablo L.': 136,'Pablo V.': 135,'Silvina S.': 135,'Martín G.': 130,'Luis P.': 128,'Gonzalo Z.': 125,'Julieta P.': 124,'Gabriel A. J.': 124,'Lucía R.': 124,'Gerardo F.': 123,'Matías V.': 122,'Karin C.': 120,'Inés D.': 119,'Liza M.': 119,'Sebastián F.': 119,'Diana B.': 118,'Aldana P.': 116,'Juan A.': 116,'Florencia A.': 114,'Graciela T.': 109,'Mónica M.': 100,},
+'56': {'Tomás V.': 158,'Julián V.': 150,'Matías F.': 145,'Guadalupe M.': 145,'Pablo L.': 139,'Alan C.': 138,'Pablo V.': 136,'Silvina S.': 135,'Luis P.': 132,'Martín G.': 131,'Gabriel A. J.': 128,'Julieta P.': 127,'Gerardo F.': 127,'Matías V.': 126,'Gonzalo Z.': 125,'Lucía R.': 125,'Liza M.': 122,'Karin C.': 121,'Diana B.': 121,'Aldana P.': 119,'Inés D.': 119,'Sebastián F.': 119,'Juan A.': 117,'Florencia A.': 115,'Graciela T.': 112,'Mónica M.': 103,},
+'57': {'Tomás V.': 159,'Julián V.': 150,'Guadalupe M.': 146,'Matías F.': 145,'Pablo L.': 140,'Alan C.': 138,'Pablo V.': 137,'Silvina S.': 136,'Martín G.': 134,'Luis P.': 133,'Julieta P.': 128,'Gerardo F.': 128,'Gabriel A. J.': 128,'Matías V.': 127,'Gonzalo Z.': 126,'Lucía R.': 126,'Karin C.': 122,'Liza M.': 122,'Diana B.': 122,'Inés D.': 120,'Aldana P.': 119,'Sebastián F.': 119,'Juan A.': 118,'Florencia A.': 116,'Graciela T.': 112,'Mónica M.': 106,},
+'58': {'Tomás V.': 159,'Julián V.': 150,'Guadalupe M.': 147,'Matías F.': 146,'Pablo L.': 141,'Alan C.': 139,'Silvina S.': 139,'Pablo V.': 138,'Martín G.': 137,'Luis P.': 133,'Diana B.': 130,'Julieta P.': 129,'Gerardo F.': 129,'Gabriel A. J.': 129,'Matías V.': 128,'Lucía R.': 127,'Gonzalo Z.': 126,'Karin C.': 123,'Liza M.': 123,'Inés D.': 121,'Aldana P.': 119,'Juan A.': 119,'Sebastián F.': 119,'Florencia A.': 117,'Graciela T.': 113,'Mónica M.': 107,},
+'59': {'Tomás V.': 159,'Julián V.': 150,'Guadalupe M.': 147,'Matías F.': 146,'Silvina S.': 142,'Pablo L.': 142,'Alan C.': 139,'Pablo V.': 138,'Martín G.': 137,'Luis P.': 134,'Julieta P.': 132,'Diana B.': 131,'Gerardo F.': 130,'Matías V.': 129,'Gabriel A. J.': 129,'Lucía R.': 128,'Gonzalo Z.': 126,'Liza M.': 124,'Karin C.': 123,'Inés D.': 121,'Florencia A.': 121,'Aldana P.': 120,'Juan A.': 119,'Sebastián F.': 119,'Graciela T.': 113,'Mónica M.': 110,},
+'60': {'Tomás V.': 167,'Guadalupe M.': 155,'Julián V.': 151,'Matías F.': 147,'Silvina S.': 146,'Pablo L.': 143,'Alan C.': 142,'Martín G.': 138,'Pablo V.': 138,'Julieta P.': 135,'Luis P.': 135,'Gerardo F.': 133,'Matías V.': 132,'Diana B.': 131,'Gabriel A. J.': 130,'Lucía R.': 128,'Gonzalo Z.': 126,'Liza M.': 125,'Karin C.': 124,'Aldana P.': 123,'Sebastián F.': 123,'Inés D.': 122,'Florencia A.': 122,'Juan A.': 119,'Graciela T.': 117,'Mónica M.': 114,},
+'61': {'Tomás V.': 171,'Julián V.': 159,'Guadalupe M.': 158,'Matías F.': 150,'Pablo L.': 147,'Silvina S.': 146,'Alan C.': 145,'Pablo V.': 142,'Luis P.': 139,'Julieta P.': 138,'Martín G.': 138,'Gerardo F.': 136,'Matías V.': 135,'Diana B.': 134,'Gabriel A. J.': 134,'Lucía R.': 132,'Sebastián F.': 131,'Gonzalo Z.': 130,'Aldana P.': 127,'Karin C.': 127,'Florencia A.': 126,'Inés D.': 125,'Liza M.': 125,'Juan A.': 123,'Graciela T.': 120,'Mónica M.': 117,},
+'62': {'Tomás V.': 179,'Julián V.': 163,'Guadalupe M.': 161,'Matías F.': 158,'Pablo L.': 155,'Silvina S.': 154,'Pablo V.': 150,'Alan C.': 149,'Luis P.': 142,'Martín G.': 139,'Julieta P.': 138,'Gerardo F.': 136,'Matías V.': 135,'Diana B.': 134,'Gabriel A. J.': 134,'Gonzalo Z.': 133,'Lucía R.': 132,'Sebastián F.': 131,'Florencia A.': 130,'Inés D.': 129,'Liza M.': 129,'Aldana P.': 128,'Karin C.': 128,'Juan A.': 124,'Graciela T.': 121,'Mónica M.': 117,},
+'63': {'Tomás V.': 179,'Guadalupe M.': 165,'Julián V.': 163,'Silvina S.': 162,'Matías F.': 159,'Pablo V.': 158,'Pablo L.': 155,'Alan C.': 149,'Luis P.': 143,'Martín G.': 139,'Julieta P.': 138,'Gerardo F.': 137,'Matías V.': 135,'Diana B.': 135,'Gabriel A. J.': 135,'Gonzalo Z.': 134,'Sebastián F.': 132,'Karin C.': 132,'Lucía R.': 132,'Florencia A.': 131,'Inés D.': 130,'Liza M.': 129,'Aldana P.': 128,'Juan A.': 125,'Graciela T.': 122,'Mónica M.': 118,},
+'64': {'Tomás V.': 179,'Guadalupe M.': 166,'Julián V.': 164,'Silvina S.': 162,'Matías F.': 159,'Pablo V.': 159,'Pablo L.': 155,'Alan C.': 150,'Luis P.': 144,'Martín G.': 140,'Julieta P.': 138,'Gerardo F.': 137,'Diana B.': 136,'Matías V.': 135,'Gabriel A. J.': 135,'Gonzalo Z.': 134,'Inés D.': 133,'Lucía R.': 133,'Sebastián F.': 132,'Karin C.': 132,'Florencia A.': 131,'Aldana P.': 129,'Liza M.': 129,'Juan A.': 125,'Graciela T.': 123,'Mónica M.': 118,}
+
+    };
+    
+    
+    // Create root element
+    // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+    var root = am5.Root.new("chartdivDNDO");
+    
+    root.numberFormatter.setAll({
+      numberFormat: "#a",
+    
+      // Group only into M (millions), and B (billions)
+      bigNumberPrefixes: [
+        { number: 1e6, suffix: "M" },
+        { number: 1e9, suffix: "B" }
+      ],
+    
+      // Do not use small number prefixes at all
+      smallNumberPrefixes: []
+    });
+    
+    var stepDuration = 2000;
+    
+    
+    // Set themes
+    // https://www.amcharts.com/docs/v5/concepts/themes/
+    root.setThemes([am5themes_Animated.new(root)]);
+    
+    
+    // Create chart
+    // https://www.amcharts.com/docs/v5/charts/xy-chart/
+    var chart = root.container.children.push(am5xy.XYChart.new(root, {
+      panX: true,
+      panY: true,
+      wheelX: "none",
+      wheelY: "none"
+    }));
+    
+    
+    // We don't want zoom-out button to appear while animating, so we hide it at all
+    chart.zoomOutButton.set("forceHidden", true);
+    
+    
+    // Create axes
+    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+    var yRenderer = am5xy.AxisRendererY.new(root, {
+      minGridDistance: 20,
+      inversed: true
+    });
+    // hide grid
+    yRenderer.grid.template.set("visible", false);
+    
+    var yAxis = chart.yAxes.push(am5xy.CategoryAxis.new(root, {
+      maxDeviation: 0,
+      categoryField: "network",
+      renderer: yRenderer
+    }));
+    
+    var xAxis = chart.xAxes.push(am5xy.ValueAxis.new(root, {
+      maxDeviation: 0,
+      min: 0,
+      strictMinMax: true,
+      extraMax: 0.1,
+      renderer: am5xy.AxisRendererX.new(root, {})
+    }));
+    
+    xAxis.set("interpolationDuration", stepDuration / 10);
+    xAxis.set("interpolationEasing", am5.ease.linear);
+    
+    
+    // Add series
+    // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+    var series = chart.series.push(am5xy.ColumnSeries.new(root, {
+      xAxis: xAxis,
+      yAxis: yAxis,
+      valueXField: "value",
+      categoryYField: "network"
+    }));
+    
+    // Rounded corners for columns
+    series.columns.template.setAll({ cornerRadiusBR: 5, cornerRadiusTR: 5 });
+    
+    // Make each column to be of a different color
+    series.columns.template.adapters.add("fill", function (fill, target) {
+      return chart.get("colors").getIndex(series.columns.indexOf(target));
+    });
+    
+    series.columns.template.adapters.add("stroke", function (stroke, target) {
+      return chart.get("colors").getIndex(series.columns.indexOf(target));
+    });
+    
+    // Add label bullet
+    series.bullets.push(function () {
+      return am5.Bullet.new(root, {
+        locationX: 1,
+        sprite: am5.Label.new(root, {
+          text: "{valueXWorking.formatNumber('#.# a')}",
+          fill: root.interfaceColors.get("alternativeText"),
+          centerX: am5.p100,
+          centerY: am5.p50,
+          populateText: true
+        })
+      });
+    });
+    
+    var label = chart.plotContainer.children.push(am5.Label.new(root, {
+      text: "1",
+      fontSize: "8em",
+      opacity: 0.2,
+      x: am5.p100,
+      y: am5.p100,
+      centerY: am5.p100,
+      centerX: am5.p100
+    }));
+    
+    // Get series item by category
+    function getSeriesItem(category) {
+      for (var i = 0; i < series.dataItems.length; i++) {
+        var dataItem = series.dataItems[i];
+        if (dataItem.get("categoryY") == category) {
+          return dataItem;
+        }
+      }
+    }
+    
+    // Axis sorting
+    function sortCategoryAxis() {
+      // sort by value
+      series.dataItems.sort(function (x, y) {
+        return y.get("valueX") - x.get("valueX"); // descending
+        //return x.get("valueX") - y.get("valueX"); // ascending
+      });
+    
+      // go through each axis item
+      am5.array.each(yAxis.dataItems, function (dataItem) {
+        // get corresponding series item
+        var seriesDataItem = getSeriesItem(dataItem.get("category"));
+    
+        if (seriesDataItem) {
+          // get index of series data item
+          var index = series.dataItems.indexOf(seriesDataItem);
+          // calculate delta position
+          var deltaPosition =
+            (index - dataItem.get("index", 0)) / series.dataItems.length;
+          // set index to be the same as series data item index
+          if (dataItem.get("index") != index) {
+            dataItem.set("index", index);
+            // set deltaPosition instanlty
+            dataItem.set("deltaPosition", -deltaPosition);
+            // animate delta position to 0
+            dataItem.animate({
+              key: "deltaPosition",
+              to: 0,
+              duration: stepDuration / 2,
+              easing: am5.ease.out(am5.ease.cubic)
+            });
+          }
+        }
+      });
+      // sort axis items by index.
+      // This changes the order instantly, but as deltaPosition is set, they keep in the same places and then animate to true positions.
+      yAxis.dataItems.sort(function (x, y) {
+        return x.get("index") - y.get("index");
+      });
+    }
+    
+    var year = 1;
+    
+    // update data with values each 1.5 sec
+    var interval = setInterval(function () {
+      year++;
+    
+      if (year > 64) {
+        clearInterval(interval);
+        clearInterval(sortInterval);
+      }
+    
+      updateData();
+    }, stepDuration);
+    
+    var sortInterval = setInterval(function () {
+      sortCategoryAxis();
+    }, 100);
+    
+    function setInitialData() {
+      var d = allData[year];
+    
+      for (var n in d) {
+        series.data.push({ network: n, value: d[n] });
+        yAxis.data.push({ network: n });
+      }
+    }
+    
+    function updateData() {
+      var itemsWithNonZero = 0;
+    
+      if (allData[year]) {
+        label.set("text", year.toString());
+    
+        am5.array.each(series.dataItems, function (dataItem) {
+          var category = dataItem.get("categoryY");
+          var value = allData[year][category];
+    
+          if (value > 0) {
+            itemsWithNonZero++;
+          }
+    
+          dataItem.animate({
+            key: "valueX",
+            to: value,
+            duration: stepDuration,
+            easing: am5.ease.linear
+          });
+          dataItem.animate({
+            key: "valueXWorking",
+            to: value,
+            duration: stepDuration,
+            easing: am5.ease.linear
+          });
+        });
+    
+        yAxis.zoom(0, itemsWithNonZero / yAxis.dataItems.length);
+      }
+    }
+    
+    setInitialData();
+    setTimeout(function () {
+      year++;
+      updateData();
+    }, 50);
+    
+    // Make stuff animate on load
+    // https://www.amcharts.com/docs/v5/concepts/animations/
+    series.appear(1000);
+    chart.appear(1000, 100);
+    
+    }); // end am5.ready()
+    </script>
+    
+    <!-- HTML -->
+    <div id="chartdivDNDO"></div>
